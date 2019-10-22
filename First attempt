@@ -1,0 +1,26 @@
+import time
+
+FinalTime = int(input("How many secs contdown? "))
+StartNow = input("Start now? [Y/N]")
+StartTimer = StartNow.upper()
+
+
+def countdown():
+
+    for c in range(FinalTime, -1, -1):
+
+        if c == 1 or c == 0:
+            print(str(c) + " second..." + "\r", end="")
+            time.sleep(1)
+        else:
+            print(str(c) + " seconds..." + "\r", end="")
+            time.sleep(1)
+
+
+if StartTimer == "Y":
+    countdown()
+elif StartTimer == "N":
+        StartTimer = input("Start now? [Y/N]".upper())
+elif StartTimer != "N" or "Y":
+    print("Invalid print, bro. Try again.")
+    StartTimer = input("Start now? [Y/N]".upper())
